@@ -16,3 +16,15 @@
 // const imagePath = (name) => images(name, true)
 
 console.log('Hello World from Webpacker')
+const webpack = require('webpack')
+environment.plugins.prepend('Provide',
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    Popper: ['popper.js', 'default']
+  })
+)
+
+module.exports = environment
+
+
